@@ -1,8 +1,7 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 import Navbar from './Components/Navbar';
 import Text from './Components/Text';
-import About from './Components/About';
 import React, { useState } from 'react';
 import Alert from './Components/Alert';
 import {
@@ -10,6 +9,7 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+import AboutUs from './Components/AboutUs';
 
 
 function App() {
@@ -54,11 +54,11 @@ function App() {
     <>
     <Router>
     <Navbar title="TextUtils" aboutText="About Us" mode={mode} toggleMode={toggleMode}/>
-    <div className="container">
+    <div>
     <Alert alert={alert}/>
     <Routes>
-          <Route exact path="/" element={    <Text heading="Enter the text to analyze below" mode={mode} showAlert={showAlert} />} />
-          <Route exact path="/about" element={<About/>} />
+          <Route exact path="/" element={<Text heading="Try TextUtils - Word Counter, Character Counter, Remove Extra Spaces" mode={mode} showAlert={showAlert} />} />
+          <Route exact path="/about" element={<AboutUs mode = {mode}/>} />
     </Routes>
     
     </div>
